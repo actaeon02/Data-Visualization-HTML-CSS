@@ -13,7 +13,7 @@
       "lookup": "properties.Name",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/Final2.csv"
+          "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/Normalized.csv"
         },
         "key": "STATES",
         "fields": ["POPULATION"]
