@@ -1,0 +1,36 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Malaysia's Data Canvas: Unemployment, Population Density, and Crime Rates Insights",
+  "width": 800,
+  "height": 400,
+  "projection": {"type": "equalEarth"},
+  "data": {
+    "url":"https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/malaysia-states.topojson",
+    "format": {"type": "topojson", "feature": "states"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.Name",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/Final2.csv"
+        },
+        "key": "STATES",
+        "fields": ["POPULATION"]
+      }
+    },
+    {"calculate": "datum.POPULATIONn + 0.1", "as": "Total Population"}
+  ],
+  "mark": {"type": "geoshape"},
+  "encoding": {
+    "color": {
+      "field": "Population",
+      "type": "quantitative",
+      "scale": {"domain": [0, 10000000]}
+    },
+    "tooltip": [
+      {"field": "properties.Name", "type": "nominal", "title": "States"},
+      {"field": "POPULATION", "type": "quantitative"}
+    ]
+  }
+}
