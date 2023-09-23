@@ -16,21 +16,38 @@
           "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/Normalized.csv"
         },
         "key": "STATES",
-        "fields": ["POPULATION"]
+        "fields": ["POPULATION", "DENSITY", "TOTALCRIME", "UNEMPLOYMENT"]
       }
     },
-    {"calculate": "datum.POPULATIONn + 0.1", "as": "Total Population"}
+    {
+      "calculate": "(datum.TOTALCRIME + 0.1) / datum.POPULATION * 10000", "as": "Crime Rate"},
+    {
+      "calculate": "format(datum['Crime Rate'], '.2f') + ' crimes per 10,000 people'",
+      "as": "Crime Rates"
+    },
+    {
+      "calculate": "datum.POPULATION + ' People'", "as": "Population"
+    },
+    {
+      "calculate": "datum.DENSITY + ' (People / KM2)'", "as": "Density"
+    },
+    {
+      "calculate": "datum.UNEMPLOYMENT + '%'", "as": "Unemployment Rate"
+    }
   ],
   "mark": {"type": "geoshape"},
   "encoding": {
     "color": {
-      "field": "Population",
+      "field": "POPULATION",
       "type": "quantitative",
-      "scale": {"domain": [0, 10000000]}
+      "scale": {"domain": [0, 5000000]}
     },
     "tooltip": [
       {"field": "properties.Name", "type": "nominal", "title": "States"},
-      {"field": "POPULATION", "type": "quantitative"}
+      {"field": "Population", "type": "nominal"},
+      {"field": "Density", "type":"nominal"},
+      {"field": "Crime Rates", "type":"nominal"},
+      {"field": "Unemployment Rate", "type":"nominal"}
     ]
   }
 }
