@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.14.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.2"></script>
+</head>
+<body>
+  <div id="vis"/>
+  <script>
+    const spec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Malaysia's Data Canvas: Unemployment, Population Density, and Crime Rates Insights",
+  "width": 800,
+  "height": 400,
+  "projection": {"type": "equalEarth"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/malaysia-states.topojson",
+    "format": {"type": "topojson", "feature": "states"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.Name",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/Normalized.csv"
+        },
+        "key": "STATES",
+        "fields": ["POPULATION", "DENSITY", "TOTALCRIME", "UNEMPLOYMENT"]
+      }
+    },
+    {
+      "calculate": "(datum.TOTALCRIME + 0.1) / datum.POPULATION * 10000",
+      "as": "Crime Rate"
+    },
+    {
+      "calculate": "format(datum['Crime Rate'], '.2f') + ' crimes per 10,000 people'",
+      "as": "Crime Rates"
+    },
+    {"calculate": "datum.POPULATION + ' People'", "as": "Population"},
+    {"calculate": "datum.DENSITY + ' (People / KM2)'", "as": "Density"},
+    {"calculate": "datum.UNEMPLOYMENT + '%'", "as": "Unemployment Rate"}
+  ],
+  "mark": {"type": "geoshape"},
+  "encoding": {
+    "color": {
+      "field": "POPULATION",
+      "type": "quantitative",
+      "scale": {"domain": [0, 4000000]}
+    },
+    "tooltip": [
+      {"field": "properties.Name", "type": "nominal", "title": "States"},
+      {"field": "Population", "type": "nominal"},
+      {"field": "Density", "type": "nominal"},
+      {"field": "Crime Rates", "type": "nominal"},
+      {"field": "Unemployment Rate", "type": "nominal"}
+    ]
+  },
+  "config": {}
+};
+    vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+  </script>
+</body>
+</html>
