@@ -39,7 +39,7 @@
           "as": "Crime Rates"
         },
         {
-          "calculate": "datum.POPULATION + ' People'", "as": "Population"
+          "calculate": "format(datum.POPULATION, ',d' + ' People'", "as": "Population"
         },
         {
           "calculate": "datum.DENSITY + ' (People / KM2)'", "as": "Density"
