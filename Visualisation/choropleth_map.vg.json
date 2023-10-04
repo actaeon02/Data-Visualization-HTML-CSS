@@ -1,6 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Malaysia's Summary of Socioeconomic Insights",
+  "title": {
+    "text": "Malaysia's Summary of Socioeconomic Insights",
+    "fontSize": 18
+  },
   "width": "container",
   "height": 400,
   "data": {

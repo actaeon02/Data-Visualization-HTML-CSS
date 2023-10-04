@@ -2,7 +2,10 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": "container",
     "height": 300,
-    "title": "Crime Trends by States",
+    "title": {
+        "text": "Crime Trends by States",
+        "fontSize": 18
+      },
     "data": {
         "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/Dataset.csv"
     },
