@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Malaysia's Data of Socioeconomic (1980 - 2016)",
+  "title": "Malaysia's Average Summary of Socioeconomic Insights",
   "width": "container",
   "height": 400,
   "data": {
