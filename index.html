@@ -1,25 +1,82 @@
 <!DOCTYPE html>
 <html>
-    
+
 <head>
-    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
-    <script src = "https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src = "https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-  
-    <!-- Import vega-embed -->
-    <script src = "https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-  
-    <!-- Import pure.css -->
-    <link rel = "stylesheet"
-          href = "https://unpkg.com/purecss@2.0.3/build/pure-min.css"
-          integrity = "sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" 
-          crossorigin = "anonymous">
-  
-    <meta name = "viewport"
-          content = "width = device-width, initial-scale = 1">
-  
-    <!-- Google font -->
-    <link href = "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" 
-          rel = "stylesheet">
+  <title>Malaysia's Data Canvas: Mean Unemployment Rate, Population Density, and Crime Rates</title>
+   <!-- Import Vega & Vega-Lite -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.15.0"></script>
+   <!-- Import Vega-embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.2"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
 </head>
+
+
+<body>
+
+  <div class="page">
+    <!-- Title and Subtitle (Grid Group) -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>Malaysia's Data Canvas: Mean Unemployment Rate, Population Density, and Crime Rates Insights (1980 - 2016)</h1>
+        <p>TThis comprehensive dataset presents an interesting socioeconomic overview of Malaysia from 1980 to 2016. 
+          These insights are derived from meticulous annual data collection, made publicly available by the <i>Government of Malaysia</i>.
+          The dataset delves into critical aspects of the country's well-being, such as <b>"Population Density, Unemployment Rate and
+          Crime Rates"</b> which have been carefully analysed for each of Malaysia's distinct local states.</p>
+      </div>
+    </div>
+    <!-- End pure grid group -->
+
+    <!-- Choropleth Map -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div id="vis1" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- End pure grid group -->
+
+    <!-- Line Chart with Description -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class="description description-right">
+          <h2>Crime Trends in various States</h2>
+          <p>One interesting trend is that crime rates have fluctuated across the years in all states of Malaysia.
+             Surprisingly, Selangor state has consistently held the unfortunate distinction of having the highest 
+             crime rates among all Malaysian states. However, a noteworthy trend emerged starting from 2007 onwards
+             — crime rates across most states began a significant decline. This remarkable shift towards safer communities
+             coincided with advancements in law enforcement strategies and community policing initiatives. Additionally,
+             increased public awareness, neighborhood watch programs, and collaborative efforts by local communities
+             may have contributed to this positive change </p>
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div id="vis2" class="vis-container"></div>
+      </div>
+    </div>
+  </div> <!-- End Page -->
+
+  <script type="text/javascript">
+    var choropleth_vis = "./Visualisation/choropleth_map.vg.json";
+    var line_vis = "./Visualisation/crime_trends.vg.json";
+
+    vegaEmbed('#vis1', choropleth_vis, { "actions": false }).then(function (result) {
+    }).catch(console.error);
+
+    vegaEmbed('#vis2', line_vis, { "actions": false }).then(function (result) {
+    }).catch(console.error);
+  </script>
+</body>
 </html>
