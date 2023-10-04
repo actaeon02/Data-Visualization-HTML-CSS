@@ -2,7 +2,6 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Malaysia's Data of Socioeconomic (1980 - 2016)",
   "width": "container",
-  "background": "aliceblue",
   "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/malaysia-states.topojson",
