@@ -3,7 +3,6 @@
     "width": "container",
     "height": 300,
     "title": "Crime Trends by States",
-    "background": "aliceblue",
     "data": {
         "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/Dataset.csv"
     },
