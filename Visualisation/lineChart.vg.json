@@ -1,0 +1,110 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "height": 400,
+    "title": "Crime Trends by States",
+    "background": "aliceblue",
+    "data": {
+        "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/Dataset.csv"
+    },
+    "params": [
+        {
+            "name": "state_filter",
+            "value": "All",
+            "bind": {
+                "input": "select",
+                "options": ["All", "Johor", "Kedah", "Kelantan", "Melaka", "Negeri Sembilan", "Pahang", "Penang", "Perak", "Perlis", "Sabah", "Sarawak", "Selangor", "Terengganu"],
+                "name": "Select State        "
+            }
+        }
+    ],
+    "transform": [
+        {"filter": "state_filter == 'All' || datum.STATES == state_filter"},
+        {
+          "calculate": "(datum.TOTAL_CRIME + 0.1) / datum.POPULATION * 10000", "as": "Crime Rate"
+        },
+        {
+          "calculate": "format(datum['Crime Rate'], '.2f') + ' crimes per 10,000 people'",
+          "as": "Crime Rates"
+        },
+        {
+          "calculate": "format(datum.TOTAL_CRIME, ',d') + ' crimes'",
+          "as": "Total Crime"
+        }
+    ],
+    "encoding": {
+        "x": {
+            "field": "YEAR",
+            "type": "temporal",
+            "title": "Year"
+        },
+        "y": {
+            "field": "TOTAL_CRIME",
+            "type": "quantitative",
+            "title": "Total Crime"
+        },
+        "color": {
+            "field": "STATES",
+            "type": "nominal",
+            "title": "States",
+            "legend": {
+                "symbolSize": 40
+            },
+            "scale": {
+                "domain": ["Johor", "Kedah", "Kelantan", "Melaka", "Negeri Sembilan", "Pahang", "Penang", "Perak", "Perlis", "Sabah", "Sarawak", "Selangor", "Terengganu"],
+                "range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf", "#aec7e8", "#ffbb78", "#98df8a"]
+            }
+        },
+        "opacity": {
+            "condition": {
+                "param": "hover",
+                "value": 1
+            },
+            "value": 0.1
+        }
+    },
+    "layer": [
+        {
+            "params": [
+                {
+                "name": "hover",
+                "select": {
+                    "type": "point",
+                    "on": "mouseover",
+                    "clear": "mouseout"
+                }
+                }
+            ],
+            "mark": {
+                "type": "circle", 
+                "size": 30
+            },
+            "encoding": {
+                "tooltip": [
+                    {"field": "STATES", "title": "State"},
+                    {"field": "YEAR", "type": "temporal", "title": "Date"},
+                    {"field": "Total Crime"},
+                    {"field": "Crime Rates", "title": "Crime Rate"}
+                ]
+            }
+        },
+        {
+            "mark": "line",
+            "encoding": {
+                "tooltip": {
+                    "condition": {
+                        "param": "hover",
+                        "field": "YEAR",
+                        "type": "temporal",
+                        "title": "Year"
+                    }
+                }
+            }
+        }
+    ],
+    "config": {
+        "view": {
+            "stroke": null
+        }
+    }
+}
