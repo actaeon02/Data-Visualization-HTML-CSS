@@ -1,7 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Malaysia's Data Canvas: Mean Unemployment Rate, Population Density, and Crime Rates Insights (1980 - 2016)",
+  "title": "Malaysia's Data of Socioeconomic (1980 - 2016)",
   "width": "container",
+  "background": "aliceblue",
   "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/malaysia-states.topojson",
@@ -54,13 +55,13 @@
           "field": "DENSITY",
           "type": "quantitative",
           "scale": {
-            "type": "threshold",
+            "type": "log",
             "domain": [20, 100, 200, 1000],
             "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
           },
           "legend": {
             "title": "Density",
-            "titleColor": "darkslateblue"
+            "titleColor": "black"
         }
       },
         "tooltip": [
