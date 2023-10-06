@@ -1,0 +1,67 @@
+{
+    "$schema":"https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "height": 350,
+    "title": {
+        "text": "Average Total Crimes by States",
+        "fontSize": 20
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/Visualisation/AverageStatisticsSorted.csv"
+    },
+    "layer": [
+        {
+            "mark": {
+                "type": "arc",
+                "innerRadius": 30,
+                "stroke": "white"
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "radiusOffset": 40
+            },
+            "encoding": {
+                "text": {
+                    "field": "STATES",
+                    "type": "nominal"
+                }
+            }
+        }
+    ],
+    "encoding": {
+        "theta": {
+            "field": "TOTALCRIME",
+            "type": "quantitative",
+            "stack": true,
+            "sort": "ascending"
+        },
+        "radius": {
+            "field": "TOTALCRIME",
+            "scale": {
+                "type": "sqrt",
+                "zero": true
+            }
+        },
+        "color": {
+            "field": "STATES",
+            "type": "nominal",
+            "legend": null,
+            "scale": {
+                "range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf", "#aec7e8", "#ffbb78", "#98df8a"]
+            }
+        },
+        "tooltip": [
+            {"field": "STATES", "type": "nominal", "title": "State"},
+            {"field": "PROPERTYCRIME", "type":"quantitative"},
+            {"field": "VIOLENTCRIME", "type":"quantitative"},
+            {"field": "TOTALCRIME", "type":"quantitative"}
+        ]
+    },
+    "config": {
+        "view": {
+            "stroke": null
+        }
+    }
+}

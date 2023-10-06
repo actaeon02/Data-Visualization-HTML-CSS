@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": "container",
+    "width": 600,
     "height": 400,
     "title": {
         "text": "Unemployment Rate vs Crime Rate",
@@ -124,7 +124,7 @@
                 },
                 "opacity": {
                     "condition": {
-                        "test": "datum.STATES == 'Selangor' || datum.STATES == 'Penang' || datum.STATES == 'Sabah' || datum.STATES == 'Sarawak'",
+                        "test": "datum.STATES == 'Selangor' || datum.STATES == 'Penang' || datum.STATES == 'Sabah' || (datum.STATES == 'Sarawak' & datum.UNEMPLOYMENT < 10 & datum['Crime Rate'] > 1)",
                         "value": 1
                     },
                     "value": 0
