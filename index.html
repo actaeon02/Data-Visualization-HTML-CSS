@@ -53,18 +53,17 @@
       <div class="pure-u-1-2">
         <div class="description description-right">
           <h2>Crime Trends in Malaysia's States</h2>
-          <p>One interesting trend is that bullying rates have 
-            decreased across the years in all regions and genders.
-            Of note is that the bullying rate in boys is now 1.9% lower
-            than that in girls, despite starting 2.2% higher. 
-            This change occurred between 2010 and 2011. 
-            We speculate that this may be due to the popularisation
-            of social media around this time, allowing for different
-            avenues of bullying, such as cyberbullying, to emerge. </p>
+          <p>Crime statistics have fluctuated across the years in all states of Malaysia that concerns the government.
+            Surprisingly, Selangor state has consistently held the unfortunate distinction of having the highest 
+            crime rates among all Malaysian states. However, a noteworthy trend emerged starting from 2007 onwards
+            — crime rates across most states began a significant decline. This remarkable shift towards safer communities
+            coincided with advancements in law enforcement strategies and community policing initiatives. Additionally,
+            increased public awareness, neighborhood watch programs, and collaborative efforts by local communities
+            may have contributed to this positive change. </p>
         </div>
       </div>
       <div class="pure-u-1-2">
-        <div id="vis3" class="vis-container"></div>
+        <div id="vis2" class="vis-container"></div>
       </div>
     </div>
     <!-- End pure grid group -->
@@ -100,10 +99,10 @@
     vegaEmbed('#vis1', choropleth_vis, { "actions": false }).then(function (result) {
     }).catch(console.error);
 
-    vegaEmbed('#vis2', interactive_scatter, { "actions": false }).then(function (result) {
+    vegaEmbed('#vis2', line_vis, { "actions": false }).then(function (result) {
     }).catch(console.error);
 
-    vegaEmbed('#vis3', line_vis, { "actions": false }).then(function (result) {
+    vegaEmbed('#vis3', interactive_scatter, { "actions": false }).then(function (result) {
     }).catch(console.error);
   </script>
 </body>
