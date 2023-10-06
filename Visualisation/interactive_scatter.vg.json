@@ -75,23 +75,12 @@
                     }
                 },
                 "color": {
-                    "field": "STATES",
+                    "field": "REGION",
                     "type": "nominal",
                     "scale": {
                         "domain": [
-                            "Johor",
-                            "Kedah",
-                            "Kelantan",
-                            "Melaka",
-                            "Negeri Sembilan",
-                            "Pahang",
-                            "Penang",
-                            "Perak",
-                            "Perlis",
-                            "Sabah",
-                            "Sarawak",
-                            "Selangor",
-                            "Terengganu"
+                            "West Malaysia",
+                            "East Malaysia"
                         ],
                         "range": [
                             "#1f77b4",
@@ -139,7 +128,7 @@
                 },
                 "opacity": {
                     "condition": {
-                        "test": "datum.STATES == 'Selangor' || datum.STATES == 'Johor' || datum.STATES == 'Penang' || datum.STATES == 'Sabah'",
+                        "test": "datum.STATES == 'Selangor' || datum.STATES == 'Perak' || datum.STATES == 'Penang' || datum.STATES == 'Sabah'",
                         "value": 1
                     },
                     "value": 0
