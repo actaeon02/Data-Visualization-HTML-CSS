@@ -7,7 +7,7 @@
         "fontSize": 20
     },
     "data": {
-        "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/Visualisation/AverageStatisticsSorted.csv"
+        "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/AverageStatisticsSorted.csv"
     },
     "layer": [
         {
@@ -20,7 +20,9 @@
         {
             "mark": {
                 "type": "text",
-                "radiusOffset": 40
+                "radiusOffset": 30,
+                "angle": 320,
+                "dx": 15
             },
             "encoding": {
                 "text": {
@@ -41,22 +43,24 @@
             "field": "TOTALCRIME",
             "scale": {
                 "type": "sqrt",
-                "zero": true
+                "zero": true,
+                "rangeMin": 30
             }
         },
         "color": {
-            "field": "STATES",
+            "field": "PERCENTAGE",
             "type": "nominal",
             "legend": null,
             "scale": {
-                "range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf", "#aec7e8", "#ffbb78", "#98df8a"]
+                "range": ["#bcbd22", "#98df8a", "#2ca02c", "#d62728", "#8c564b", "#9467bd", "#17becf", "#ff7f0e", "#aec7e8", "#7f7f7f", "#e377c2", "#1f77b4", "#ffbb78"]
             }
         },
         "tooltip": [
             {"field": "STATES", "type": "nominal", "title": "State"},
             {"field": "PROPERTYCRIME", "type":"quantitative"},
             {"field": "VIOLENTCRIME", "type":"quantitative"},
-            {"field": "TOTALCRIME", "type":"quantitative"}
+            {"field": "TOTALCRIME", "type":"quantitative"},
+            {"field": "PERCENTAGE", "type": "quantitative", "format": "0.2%"}
         ]
     },
     "config": {
