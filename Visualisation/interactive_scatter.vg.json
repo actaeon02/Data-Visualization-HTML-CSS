@@ -49,7 +49,7 @@
             "type": "quantitative",
             "title": "Unemployment Rate",
             "scale": {
-                "domain": [0, 10]
+                "domain": [0.5, 10]
             }
         },
         "y": {
@@ -57,7 +57,7 @@
             "type": "quantitative",
             "title": "Crime Rate",
             "scale": {
-                "domain": [0, 1300]
+                "domain": [0, 1200]
             }
         }
     },
@@ -83,22 +83,18 @@
                             "East Malaysia"
                         ],
                         "range": [
-                            "#1f77b4",
-                            "#ff7f0e",
-                            "#2ca02c",
                             "#d62728",
-                            "#9467bd",
-                            "#8c564b",
-                            "#e377c2",
-                            "#7f7f7f",
-                            "#bcbd22",
-                            "#17becf",
-                            "#aec7e8",
-                            "#ffbb78",
-                            "#98df8a"
+                            "#9467bd"
                         ]
 
                     }
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum.UNEMPLOYMENT > 10 | datum['Crime Rate'] < 1",
+                        "value": 0
+                    },
+                    "value": 0.7
                 },
                 "tooltip": [
                     {"field": "STATES", "type": "nominal", "title": "State"},
@@ -112,9 +108,9 @@
         {
             "mark": {
                 "type": "text",
-                "align": "left",
+                "align": "center",
                 "baseline": "middle",
-                "dx": 11,
+                "dy": -15,
                 "fontSize": 11.5,
                 "fontStyle": "italic"
             },
@@ -128,7 +124,7 @@
                 },
                 "opacity": {
                     "condition": {
-                        "test": "datum.STATES == 'Selangor' || datum.STATES == 'Perak' || datum.STATES == 'Penang' || datum.STATES == 'Sabah'",
+                        "test": "datum.STATES == 'Selangor' || datum.STATES == 'Penang' || datum.STATES == 'Sabah' || datum.STATES == 'Sarawak'",
                         "value": 1
                     },
                     "value": 0

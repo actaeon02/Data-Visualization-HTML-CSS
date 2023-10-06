@@ -48,6 +48,27 @@
     </div>
     <!-- End pure grid group -->
 
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class="description description-right">
+          <h2>Crime Trends in Malaysia's States</h2>
+          <p>One interesting trend is that bullying rates have 
+            decreased across the years in all regions and genders.
+            Of note is that the bullying rate in boys is now 1.9% lower
+            than that in girls, despite starting 2.2% higher. 
+            This change occurred between 2010 and 2011. 
+            We speculate that this may be due to the popularisation
+            of social media around this time, allowing for different
+            avenues of bullying, such as cyberbullying, to emerge. </p>
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div id="vis3" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- End pure grid group -->
+
     <!-- Line Chart with Description -->
     <div class="pure-g">
       <div class="pure-u-1-1">
@@ -64,7 +85,7 @@
     <!-- Choropleth Map -->
     <div class="pure-g">
       <div class="pure-u-1-1">
-        <div id="vis2" class="vis-container"></div>
+        <div id="vis3" class="vis-container"></div>
       </div>
     </div>
     <!-- End pure grid group -->
@@ -73,12 +94,16 @@
 
   <script type="text/javascript">
     var choropleth_vis = "./Visualisation/choropleth_map.vg.json";
+    var interactive_scatter = "./Visualisation/interactive_scatter.vg.json"
     var line_vis = "./Visualisation/crime_trends.vg.json";
 
     vegaEmbed('#vis1', choropleth_vis, { "actions": false }).then(function (result) {
     }).catch(console.error);
 
-    vegaEmbed('#vis2', line_vis, { "actions": false }).then(function (result) {
+    vegaEmbed('#vis2', interactive_scatter, { "actions": false }).then(function (result) {
+    }).catch(console.error);
+
+    vegaEmbed('#vis3', line_vis, { "actions": false }).then(function (result) {
     }).catch(console.error);
   </script>
 </body>
