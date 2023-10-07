@@ -1,0 +1,130 @@
+{
+    "$schema":"https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "height": 250,
+    "title": {
+        "text": "Unemployment Rate over time by States",
+        "fontSize": 18,
+        "offset": 30
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/Dataset.csv"
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "STATES",
+                "oneOf": [
+                    "Johor",
+                    "Kedah",
+                    "Kelantan",
+                    "Melaka",
+                    "Negeri Sembilan",
+                    "Pahang",
+                    "Penang",
+                    "Perak",
+                    "Perlis",
+                    "Sabah",
+                    "Sarawak",
+                    "Selangor",
+                    "Terengganu"
+                ]
+            }
+        },
+        {
+            "filter": {
+                "field": "YEAR",
+                "oneOf": [
+                    1980,
+                    2016
+                ]
+            }
+        }
+    ],
+    "encoding": {
+        "y": {
+            "field": "UNEMPLOYMENT",
+            "type":"quantitative",
+            "title": "Unemployment Rate",
+            "axis": {
+                "offset": 10,
+                "ticks": false,
+                "minExtent": 20,
+                "labelPadding": 10
+            },
+            "scale": {
+                "domain": [0.5, 5.5]
+            }
+        },
+        "x": {
+            "field": "STATES",
+            "type": "nominal",
+            "title": "Malaysia States",
+            "axis": {
+                "offset": 5,
+                "ticks": false,
+                "minExtent": 80,
+                "domain": true,
+                "labelPadding": 10,
+                "labelAngle": -45
+            }
+        }
+    },
+    "layer": [
+        {
+            "mark": "line",
+            "encoding": {
+                "detail": {
+                    "field": "STATES",
+                    "type": "nominal"
+                },
+                "color": {
+                    "value": "#6082B6"
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "point",
+                "filled": true
+            },
+            "encoding": {
+                "color": {
+                    "field": "YEAR",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": [
+                            1980,
+                            2016
+                        ],
+                        "range": [
+                           "#89CFF0", "#4682B4"
+                        ]
+                    },
+                    "title": "Year"
+                },
+                "tooltip": [
+                    {"field": "STATES", "type": "nominal", "title": "State"},
+                    {"field": "YEAR", "type": "nominal"},
+                    {"field": "PROPERTY_CRIME", "type":"quantitative"},
+                    {"field": "VIOLENT_CRIME", "type":"quantitative"},
+                    {"field": "TOTAL_CRIME", "type":"quantitative"},
+                    {"field": "UNEMPLOYMENT", "type": "quantitative"}
+                ],
+                "size": {
+                    "value": 100
+                },
+                "opacity": {
+                    "value": 0.8
+                }
+            }
+        }
+    ],
+    "config": {
+        "style": {
+            "cell": {
+                "stroke": "transparent"
+            }
+        }
+    }
+}

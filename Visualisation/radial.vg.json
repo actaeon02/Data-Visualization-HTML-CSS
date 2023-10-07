@@ -2,10 +2,6 @@
     "$schema":"https://vega.github.io/schema/vega-lite/v5.json",
     "width": "container",
     "height": 350,
-    "title": {
-        "text": "Average Total Crimes by States",
-        "fontSize": 20
-    },
     "data": {
         "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/AverageStatisticsSorted.csv"
     },
@@ -28,6 +24,13 @@
                 "text": {
                     "field": "STATES",
                     "type": "nominal"
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum.STATES == 'Perlis'",
+                        "value": 0
+                    },
+                    "value": 1
                 }
             }
         }
@@ -64,8 +67,10 @@
         ]
     },
     "config": {
-        "view": {
-            "stroke": null
+        "style": {
+            "cell": {
+                "stroke": "transparent"
+            }
         }
     }
 }
