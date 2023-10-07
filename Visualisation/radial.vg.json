@@ -5,6 +5,20 @@
     "data": {
         "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/AverageStatisticsSorted.csv"
     },
+    "transform": [
+      {
+        "calculate": "format(datum.PROPERTYCRIME, ',d') + ' crime'", "as": "Property Crime"
+      },
+      {
+        "calculate": "format(datum.VIOLENTCRIME, ',d') + ' crime'", "as": "Violent Crime"
+      },
+      {
+        "calculate": "format(datum.TOTALCRIME, ',d') + ' crime'", "as": "Total Crime"
+      },
+      {
+        "calculate": "format(datum.PERCENTAGE * 100, '.2f') + '%'", "as": "Percentage"
+      }
+    ],
     "layer": [
         {
             "mark": {
@@ -60,10 +74,10 @@
         },
         "tooltip": [
             {"field": "STATES", "type": "nominal", "title": "State"},
-            {"field": "PROPERTYCRIME", "type":"quantitative"},
-            {"field": "VIOLENTCRIME", "type":"quantitative"},
-            {"field": "TOTALCRIME", "type":"quantitative"},
-            {"field": "PERCENTAGE", "type": "quantitative", "format": "0.2%"}
+            {"field": "Property Crime", "type":"nominal"},
+            {"field": "Violent Crime", "type":"nominal"},
+            {"field": "Total Crime", "type":"nominal"},
+            {"field": "Percentage", "type": "nominal", "title": "Percentage of total crime across Malaysia"}
         ]
     },
     "config": {
