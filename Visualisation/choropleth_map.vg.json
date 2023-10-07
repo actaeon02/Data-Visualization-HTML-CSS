@@ -74,47 +74,6 @@
           {"field": "Unemployment Rate", "type":"nominal"}
         ]
       }
-    },
-    {
-        "mark": {
-            "type": "text",
-            "baseline": "middle",
-            "dy": -10,
-            "fontSize": 11,
-            "fontStyle": "italic",
-            "color": "#A0522D",
-            "fontWeight": "bolder"
-        },
-        "encoding": {
-            "latitude": {"field": "LAT", "type": "quantitative"},
-            "longitude": {"field": "LONG", "type": "quantitative"},
-            "text": {"field": "properties.Name", "type": "nominal"},
-            "opacity": {
-            "condition": {
-                "test": "datum.properties.Name == 'Sarawak' || datum.properties.Name == 'Sabah' || datum.properties.Name == 'Pahang' || datum.properties.Name == 'Johor' || datum.properties.Name == 'Perak'",
-                "value": 1
-                },
-                "value": 0
-            }
-        }
-    },
-    {
-        "mark": {
-            "type": "circle",
-            "baseline": "middle",
-            "color": "#A0522D"
-        },
-        "encoding": {
-            "latitude": {"field": "LAT", "type": "quantitative"},
-            "longitude": {"field": "LONG", "type": "quantitative"},
-            "opacity": {
-            "condition": {
-                "test": "datum.properties.Name == 'Sarawak' || datum.properties.Name == 'Sabah' || datum.properties.Name == 'Pahang' || datum.properties.Name == 'Johor' || datum.properties.Name == 'Perak'",
-                "value": 1
-                },
-                "value": 0
-            }
-        }
     }
   ]
 }

@@ -4,7 +4,8 @@
     "height": 400,
     "title": {
         "text": "Unemployment Rate vs Crime Rate",
-        "fontSize": 20
+        "fontSize": 20,
+        "offset": 20
     },
     "data": {
         "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/Dataset.csv"
@@ -41,6 +42,9 @@
         },
         {
             "calculate": "datum.UNEMPLOYMENT + '%'", "as": "Unemployment Rate"
+        },
+        {
+          "filter": "datum.UNEMPLOYMENT < 10 & datum['Crime Rate'] > 1"
         }
     ],
     "encoding": {
@@ -50,6 +54,9 @@
             "title": "Unemployment Rate",
             "scale": {
                 "domain": [0.5, 10]
+            },
+            "axis": {
+              "tickCount": 4
             }
         },
         "y": {
@@ -58,12 +65,35 @@
             "title": "Crime Rate",
             "scale": {
                 "domain": [0, 1200]
+            },
+            "axis": {
+              "tickCount": 4
             }
         }
     },
     "layer": [
         {
-            "mark": "circle",
+            "params": [
+              {
+              "name": "grid",
+              "select": "interval",
+              "bind": "scales"
+              },
+              {
+              "name": "state_highlight",
+              "select": {"type": "point", "fields": ["REGION"]},
+              "bind": "legend"
+              },
+              {
+              "name": "highlight",
+              "select": {"type": "point", "on": "mouseover"}
+              }
+            ],
+            "mark": {
+              "type": "circle",
+              "stroke": "black",
+              "strokeWidth": 1
+            },
             "encoding": {
                 "size": {
                     "field": "DENSITY",
@@ -72,6 +102,11 @@
                         "type": "threshold",
                         "domain": [100, 200, 500, 1000],
                         "range": [100, 200, 300, 400, 600]
+                    },
+                    "condition": {
+                      "param": "highlight",
+                      "empty": false,
+                      "value": 500
                     }
                 },
                 "color": {
@@ -83,18 +118,28 @@
                             "East Malaysia"
                         ],
                         "range": [
-                            "#d62728",
-                            "#9467bd"
+                            "#e6550d",
+                            "#4682B4"
                         ]
 
                     }
                 },
                 "opacity": {
                     "condition": {
-                        "test": "datum.UNEMPLOYMENT > 10 | datum['Crime Rate'] < 1",
-                        "value": 0
+                        "param": "state_highlight",
+                        "value": 0.7
                     },
-                    "value": 0.7
+                    "value": 0.2
+                },
+                "strokeOpacity": {
+                  "condition": [
+                    {
+                      "param": "highlight",
+                      "empty": false,
+                      "value": 1
+                    }
+                  ],
+                  "value": 0
                 },
                 "tooltip": [
                     {"field": "STATES", "type": "nominal", "title": "State"},
@@ -124,7 +169,7 @@
                 },
                 "opacity": {
                     "condition": {
-                        "test": "datum.STATES == 'Selangor' || datum.STATES == 'Penang' || datum.STATES == 'Sabah' || (datum.STATES == 'Sarawak' & datum.UNEMPLOYMENT < 10 & datum['Crime Rate'] > 1)",
+                        "test": "(datum.STATES == 'Selangor' || datum.STATES == 'Penang' || datum.STATES == 'Sabah' || datum.STATES == 'Sarawak') & datum.UNEMPLOYMENT < 10 & datum['Crime Rate'] > 1",
                         "value": 1
                     },
                     "value": 0
