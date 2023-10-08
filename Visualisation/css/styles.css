@@ -10,18 +10,13 @@ h1 {
     margin-top: 5px;
 }
 
-p {
-    font-weight: normal;
-    font-size: 16px;
-}
-
 .crime_text {
-    color: "#a63603";
+    color: #a63603;
     font-weight: bold;
 }
 
 .unemployment_text {
-    color: darkslateblue;
+    color: darkcyan;
     font-weight: bold;
 }
 
@@ -94,7 +89,7 @@ h1 {
     color: white;
 }
 
-#map_frame {
+#frame {
     background-color: #FFF5EE;
     padding: 20px;
 }

@@ -2,6 +2,7 @@
     "$schema":"https://vega.github.io/schema/vega-lite/v5.json",
     "width": "container",
     "height": 350,
+    "background": "#FFF5EE",
     "data": {
         "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/AverageStatisticsSorted.csv"
     },
