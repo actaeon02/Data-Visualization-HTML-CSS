@@ -1,10 +1,33 @@
 body *{
-    font-family: 'Palanquin', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     line-height: 1.5;
 }
 
 h1 {
     font-weight: 900;
+    margin: 5px;
+    margin-left: 0px;
+    margin-top: 5px;
+}
+
+.crime_text {
+    color: "#a63603";
+    font-weight: "bold";
+}
+
+.unemployment_text {
+    color: darkslateblue;
+    font-weight: "bold";
+}
+
+.density_text {
+    color:rgb(54, 156, 54);
+    font-weight: "bold";
+}
+
+.white_text {
+    color: white;
+    font-weight: bold;
 }
 
 body {
@@ -41,5 +64,18 @@ h1 {
 }
 
 .small-font {
-    font-size: 14px;
+    font-size: 12px;
+}
+
+#banner {
+    padding: 20px;
+    padding-top: 20px;
+    background: url("../Visualisation/banner.png");
+    background-position: center;
+    color: white;
+}
+
+#map_frame {
+    background-color: peachpuff;
+    padding: 20px;
 }
