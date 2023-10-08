@@ -45,11 +45,11 @@ p {
 }
 
 body {
-    background-color: lightgray;
+    background-color: white;
 }
 
 .page {
-    width: 1200px;
+    width: 1000px;
     background-color: white;
     margin: auto;
     padding: 50px;
@@ -84,7 +84,7 @@ h1 {
 #banner {
     padding: 20px;
     padding-top: 20px;
-    background: url("https://github.com/actaeon02/FIT3179/blob/main/Visualisation/Banner.png") #20445f;
+    background: url("https://github.com/actaeon02/FIT3179/blob/main/Visualisation/Banner.png");
     background-position: center;
     color: white;
 }
