@@ -31,7 +31,7 @@ p {
 }
 .socio_text {
     color: sandybrown;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 .white_text {
@@ -41,7 +41,7 @@ p {
 
 .gray_text {
     color: lightgray;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 body {
@@ -84,7 +84,7 @@ h1 {
 #banner {
     padding: 20px;
     padding-top: 20px;
-    background: url("../Visualisation/Banner.png");
+    background: url("/Visualisation/Banner.png") #20445f;
     background-position: center;
     color: white;
 }
