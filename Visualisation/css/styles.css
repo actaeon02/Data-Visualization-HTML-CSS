@@ -70,8 +70,9 @@ h1 {
 #banner {
     padding: 20px;
     padding-top: 20px;
-    background: url("../Visualisation/banner.png");
+    background: url("../Visualisation/banner.png") #20445f;
     background-position: center;
+    color: white;
 }
 
 #map_frame {
