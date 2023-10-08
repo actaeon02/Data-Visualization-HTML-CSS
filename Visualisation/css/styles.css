@@ -39,6 +39,11 @@ p {
     font-weight: bold;
 }
 
+.gray_text {
+    color: lightgray;
+    font-weight: bold;
+}
+
 body {
     background-color: lightgray;
 }
