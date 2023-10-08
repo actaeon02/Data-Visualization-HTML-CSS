@@ -35,6 +35,9 @@
                     2016
                 ]
             }
+        },
+        {
+            "calculate": "datum.UNEMPLOYMENT + '%'", "as": "Unemployment Rate"
         }
     ],
     "encoding": {
@@ -101,11 +104,8 @@
                 },
                 "tooltip": [
                     {"field": "STATES", "type": "nominal", "title": "State"},
-                    {"field": "YEAR", "type": "nominal"},
-                    {"field": "PROPERTY_CRIME", "type":"quantitative"},
-                    {"field": "VIOLENT_CRIME", "type":"quantitative"},
-                    {"field": "TOTAL_CRIME", "type":"quantitative"},
-                    {"field": "UNEMPLOYMENT", "type": "quantitative"}
+                    {"field": "YEAR", "type": "nominal", "title": "Year"},
+                    {"field": "Unemployment Rate", "type": "nominal"}
                 ],
                 "size": {
                     "value": 100
