@@ -95,10 +95,13 @@
         "encoding": {
             "opacity": {
                 "condition": {
-                    "test": "datum.STATES == 'Sarawak' || datum.STATES == 'Sabah' || datum.STATES == 'Johor' || datum.STATES == 'Pahang' || datum.STATES == 'Selangor'",
+                    "test": "datum.STATES == 'Sarawak' || datum.STATES == 'Sabah' || datum.STATES == 'Johor' || datum.STATES == 'Pahang'",
                     "value": 1
                 },
                 "value": 0
+            },
+            "size": {
+              "value": 40
             }
         }
       }, {
@@ -106,7 +109,7 @@
             "type": "text",
             "baseline": "middle",
             "dy": -12,
-            "fontSize": 9,
+            "fontSize": 19,
             "fontStyle": "italic",
             "fontWeight": "bold"
         },
@@ -115,10 +118,13 @@
           "color": {"value": "#4A0404"},
           "opacity": {
             "condition": {
-                "test": "datum.STATES == 'Sarawak' || datum.STATES == 'Sabah' || datum.STATES == 'Johor' || datum.STATES == 'Pahang' || datum.STATES == 'Selangor'",
+                "test": "datum.STATES == 'Sarawak' || datum.STATES == 'Sabah' || datum.STATES == 'Johor' || datum.STATES == 'Pahang'",
                 "value": 1
             },
             "value": 0
+          },
+          "size": {
+            "value": 7
           }
         }
       }

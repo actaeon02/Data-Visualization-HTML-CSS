@@ -12,7 +12,7 @@ h1 {
 
 p {
     font-weight: normal;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .crime_text {
@@ -84,7 +84,7 @@ h1 {
 #banner {
     padding: 20px;
     padding-top: 20px;
-    background-image: url("https://github.com/actaeon02/FIT3179/blob/main/Visualisation/Banner.png");
+    background: url("https://github.com/actaeon02/FIT3179/blob/main/Visualisation/Banner.png") #20445f;
     background-position: center;
     color: white;
 }
