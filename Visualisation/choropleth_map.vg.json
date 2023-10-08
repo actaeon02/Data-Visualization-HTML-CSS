@@ -13,7 +13,7 @@
       "transform": [
         {"calculate": "'Data is not available in ' + datum.properties.Name", "as": "note"}
       ],
-      "mark": {"type": "geoshape", "fill": "darkslategray", "stroke": "white"},
+      "mark": {"type": "geoshape", "fill": "palevioletred", "stroke": "white"},
       "encoding": {
         "tooltip": {
           "field": "note"
@@ -124,7 +124,7 @@
             "value": 0
           },
           "size": {
-            "value": 13
+            "value": 11
           }
         }
       }

@@ -16,7 +16,7 @@ h1 {
 }
 
 .unemployment_text {
-    color: darkcyan;
+    color: #2f5e84;
     font-weight: bold;
 }
 
@@ -34,8 +34,8 @@ h1 {
     font-weight: bold;
 }
 
-.gray_text {
-    color: darkslategray;
+.pink_text {
+    color: palevioletred;
     font-weight: bolder;
 }
 
