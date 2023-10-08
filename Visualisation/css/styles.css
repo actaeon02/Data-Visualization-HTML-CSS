@@ -35,7 +35,7 @@ h1 {
 }
 
 .gray_text {
-    color: darkgray;
+    color: darkslategray;
     font-weight: bolder;
 }
 
@@ -70,7 +70,7 @@ h1 {
 }
 
 .description-left {
-    padding-right: 5px;
+    padding-right: 20px;
 }
 
 .pure-g {
