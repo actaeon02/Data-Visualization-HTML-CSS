@@ -84,12 +84,12 @@ h1 {
 #banner {
     padding: 20px;
     padding-top: 20px;
-    background: url("/Visualisation/Banner.png") #20445f;
+    background: url("Visualisation/Banner.png") #20445f;
     background-position: center;
     color: white;
 }
 
 #map_frame {
-    background-color: #F2D2BD;
+    background-color: #FFF5EE;
     padding: 20px;
 }
