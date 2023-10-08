@@ -40,8 +40,13 @@ p {
 }
 
 .gray_text {
-    color: lightgray;
+    color: darkgray;
     font-weight: bolder;
+}
+
+.red_text {
+    color: crimson;
+    font-weight: bold;
 }
 
 body {

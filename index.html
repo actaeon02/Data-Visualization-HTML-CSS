@@ -32,7 +32,7 @@
     <div class="pure-g">
       <div class="pure-u-1-1">
         <div id="banner">
-          <h1>Malaysia's Socioeconomic Insights (1980 - 2016)</h1>
+          <h1>Malaysia's <span class="socio_text">Socioeconomic</span> Insights (1980 - 2016)</h1>
         </div>
       </div>
     </div>
@@ -45,8 +45,8 @@
           <h2>Average <span class="socio_text">Socioeconomic</span> Insights</h2>
           <p>This comprehensive dataset presents an interesting socioeconomic overview of Malaysia from 1980 to 2016. 
             These insights are derived from meticulous annual data collection, made publicly available by the <i>Government of Malaysia</i>.
-            The dataset delves into critical aspects of the country's well-being, such as <b>"Population Density, Unemployment Rate and
-            Crime Rates"</b> which have been carefully analysed for each of Malaysia's distinct local states.</p>
+            The dataset delves into critical aspects of the country's well-being, such as <b>"<span class="density_text">Population Density</span>, <span class="unemployment_text">Unemploymnt Rate</span> and
+            <span class="crime_text">Crime Rates</span>"</b> which have been carefully analysed for each of Malaysia's distinct local states.</p>
 
           <div id="vis1" class="vis-container"></div>
           <div id="small-font">
@@ -66,29 +66,23 @@
     <!-- Instructions of Bubble Chart interactivity-->
     <div class="pure-g">
       <div class="pure-u-1-1">
-        <div id="small-font">
-          <p><b>**NOTE:</b> You have the option to filter the chart by selecting the <strong>REGION</strong></p>
-      </div>
-      </div>
-    </div>
+        <div id = "map_frame">
+          <h2>Correlation between <span class="unemployment_text">Unemployment Rate</span> and <span class="crime_text">Crime Rates</span>.</h2>
+          
+          <div id="vis3" class="vis-container"></div>
 
-    <!-- Interactive Bubble Chart -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
-        <div id="vis3" class="vis-container"></div>
-      </div>
-    </div>
-    <!-- End pure grid group -->
-
-    <!-- Explanation of Bubble Chart -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
+          <div id="small-font">
+              <p><b>**NOTE:</b> You have the option to filter the chart by selecting the <strong><span class="red_text">REGION</span></strong></p>
+          </div>
+            
           <p>The chart above illustrates the correlation between Unemployment Rate, Crime Rate, and Density.
-            It appears that states with higher unemployment rates tend to have higher crime rates, 
-            although this relationship is not very strong. Population density is also a factor in the visualization,
-            and it's worth noting that states with better crime rates do not necessarily have lower population densities.
-            This suggests that the key to maintaining lower crime rates may depend on factors such as education,
-            job opportunities, and government initiatives aimed at addressing these issues </p>
+              It appears that states with higher unemployment rates tend to have higher crime rates, 
+              although this relationship is not very strong. Population density is also a factor in the visualization,
+              and it's worth noting that states with better crime rates do not necessarily have lower population densities.
+              This suggests that the key to maintaining lower crime rates may depend on factors such as education,
+              job opportunities, and government initiatives aimed at addressing these issues 
+            </p>
+        </div>
       </div>
     </div>
 

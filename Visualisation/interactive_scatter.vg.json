@@ -2,11 +2,6 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": "container",
     "height": 400,
-    "title": {
-        "text": "Unemployment Rate vs Crime Rate",
-        "fontSize": 20,
-        "offset": 20
-    },
     "data": {
         "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/Dataset.csv"
     },
