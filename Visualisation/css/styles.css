@@ -1,26 +1,24 @@
 body *{
+    font-family: 'Cantarell', sans-serif;
     line-height: 1.5;
 }
 
 h1 {
-    font-family: 'Lobster Two';
     font-weight: 900;
     margin: 5px;
     margin-left: 0px;
     margin-top: 5px;
-    font-size: 32px;
+    font-size: 40px;
     text-align: center;
 }
 
 h2 {
-    font-family: 'Cantarell';
-    font-size: 24px;
+    font-size: 28px;
     text-align: center;
 }
 
 p {
-    font-family: 'Cantarell';
-    font-size: 16px;
+    font-size: 18px;
     text-align: justify;
 }
 
@@ -98,7 +96,7 @@ body {
 
 .banner {
     background-image: url('https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/Banner.png');
-    background-size: auto; /* Adjust as needed */
+    background-size: cover; /* Adjust as needed */
     background-repeat: no-repeat;
     background-position: center;
     color: white;
