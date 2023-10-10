@@ -122,7 +122,7 @@
 
         <div class="pure-u-1-2">
           <div class="description description">
-            <h2><span class="crime_text">Total Crimes</span> across States</h2><hr style="margin-left: 3px; width: 450px;">
+            <h2>Top <span class="density_text">Population</span> States</h2><hr style="margin-left: 3px; width: 450px;">
             <p style="margin-right: 20px;">Crime statistics in Malaysian states have been fluctuating over the years.
               Notably, Selangor consistently reported the highest crime rates. 
               However, a positive trend emerged in 2007, with crime rates declining in most states.
@@ -165,7 +165,7 @@
     var line_vis = "./Visualisation/crime_trends.vg.json";
     var radial = "./Visualisation/radial.vg.json"
     var dot_plot = "./Visualisation/connected_dot_plot.vg.json"
-    var rank_chart = ".Visualisation/rank_chart.vg.json"
+    var bar_chart = "./Visualisation/bar.vg.json"
 
     vegaEmbed('#vis1', choropleth_vis, { "actions": false }).then(function (result) {
     }).catch(console.error);
