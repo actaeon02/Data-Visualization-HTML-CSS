@@ -1,9 +1,9 @@
 body *{
-    font-family: 'Noto Sans', sans-serif;
     line-height: 1.5;
 }
 
 h1 {
+    font-family: 'Lobster Two', sans-serif;
     font-weight: 900;
     margin: 5px;
     margin-left: 0px;
@@ -12,7 +12,13 @@ h1 {
 }
 
 h2 {
+    font-family: 'Mulish', sans-serif;
     font-size: 24px;
+}
+
+p {
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px
 }
 
 .crime_text {
@@ -87,7 +93,7 @@ h1 {
 }
 
 .banner {
-    background-image: url('Visualisation/Banner.png');
+    background-image: url('https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/Banner.png');
     background-size: cover; /* Adjust as needed */
     background-repeat: no-repeat;
     background-position: center;
