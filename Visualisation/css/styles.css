@@ -87,7 +87,7 @@ h1 {
 }
 
 .banner {
-    background-image: url('https://github.com/actaeon02/FIT3179/blob/main/Visualisation/Banner.png');
+    background-image: url('Visualisation/Banner.png');
     background-size: cover; /* Adjust as needed */
     background-repeat: no-repeat;
     background-position: center;
