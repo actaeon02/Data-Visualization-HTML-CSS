@@ -3,6 +3,10 @@ body *{
     line-height: 1.5;
 }
 
+div {
+    margin: 5px;
+}
+
 h1 {
     font-weight: 900;
     margin: 5px;
@@ -18,8 +22,14 @@ h2 {
 }
 
 p {
-    font-size: 14px;
+    font-size: 15px;
     text-align: justify;
+}
+
+hr {
+    height: 3px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .crime_text {
