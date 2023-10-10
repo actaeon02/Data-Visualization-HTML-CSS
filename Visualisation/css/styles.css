@@ -92,12 +92,8 @@ body {
     font-size: 12px;
 }
 
-.center-text {
-    text-align: center;
-  }
-
-.justify {
-    text-align: justify;
+.title {
+    font-family: 'Lobster Two';
 }
 
 .banner {
