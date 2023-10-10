@@ -116,18 +116,18 @@
     <div class="pure-g">
       <div id="frame">
 
-        <div class="pure-u-1-2">
+        <div class="pure-u-1-2" style="margin-top: 10px;">
           <div id="vis4" class="vis-container"></div>
         </div>
 
         <div class="pure-u-1-2">
           <div class="description description">
-            <h2>Top <span class="density_text">Population</span> States</h2><hr style="margin-left: 3px; width: 450px;">
-            <p style="margin-right: 20px;">Crime statistics in Malaysian states have been fluctuating over the years.
-              Notably, Selangor consistently reported the highest crime rates. 
-              However, a positive trend emerged in 2007, with crime rates declining in most states.
-              This shift towards safer communities is aligned with improved law enforcement strategies,
-              community policing, public awareness, and collaborative efforts.</p>
+            <h2>Top <span class="density_text">Population</span> States</h2><hr style="margin-left: 25px; width: 430px;">
+            <p style="margin-right: 10px; margin-left: 10px;"><span class="socio_text">Selangor</span> has held the title of the <strong>most populous</strong> state in Malaysia
+              since <b>1986</b>, reflecting its status as a significant hub for population growth, likely driven by economic opportunities
+              and urbanization. In contrast, <span class="perlis">Perlis</span> has consistently had the <strong>lowest population</strong> among all states from <b>1980 to 2016</b>,
+              possibly due to its small land area, which may have limited its ability to attract a larger population compared to
+              larger, more economically vibrant states like Selangor.</p>
           </div>
         </div>
       </div>
@@ -176,7 +176,7 @@
     vegaEmbed('#vis3', interactive_scatter, { "actions": false }).then(function (result) {
     }).catch(console.error);
 
-    vegaEmbed('#vis4', rank_chart, { "actions": false }).then(function (result) {
+    vegaEmbed('#vis4', bar_chart, { "actions": false }).then(function (result) {
     }).catch(console.error);
 
     vegaEmbed('#vis5', dot_plot, { "actions": false }).then(function (result) {

@@ -4,7 +4,7 @@
       "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/Dataset.csv"
     },
     "width": "container",
-    "height": 400,
+    "height": 300,
     "background": "#FFF5EE",
     "params": [
       {
@@ -17,7 +17,12 @@
               "step": 1,
               "name": "Select Year"
           }
-      }
+      },
+      {
+          "name": "highlight",
+          "select": {"type": "point", "on": "pointerover"}
+      },
+      {"name": "select", "select": "point"}
     ],
     "transform": [
       {
@@ -30,7 +35,8 @@
     ],
     "mark": {
       "type": "bar",
-      "cornerRadiusEnd": 5
+      "cornerRadiusEnd": 5,
+      "height": 13
     },
     "encoding": {
       "x": {
@@ -44,23 +50,49 @@
       "y": {
         "field": "STATES",
         "type": "nominal",
-        "axis": {"title": "Year"}
+        "axis": {"title": "State"}
       },
       "color": {
-        "field": "STATES",
-        "type": "nominal",
-        "scale": {
-          "domain": ["Johor", "Kedah", "Kelantan", "Melaka", "Negeri Sembilan", "Pahang", "Penang", "Perak", "Perlis", "Sabah", "Sarawak", "Selangor", "Terengganu"],
-          "range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf", "#aec7e8", "#ffbb78", "#98df8a"]
-        }
+          "field": "STATES",
+          "type": "nominal",
+          "scale": {
+              "domain": ["Johor", "Kedah", "Kelantan", "Melaka", "Negeri Sembilan", "Pahang", "Penang", "Perak", "Perlis", "Sabah", "Sarawak", "Selangor", "Terengganu"],
+              "range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf", "#aec7e8", "#ffbb78", "#98df8a"]
+          },
+          "legend": null
       },
       "tooltip": [
         {"field": "STATES", "type": "nominal", "title": "State"},
         {"field": "PopulationTooltip", "type": "nominal", "title": "Population"}
-      ]
-    },
-    "config": {
-      "view": {"stroke": null}
-    }
+      ],
+      "stroke": {
+          "condition": {
+              "param": "select",
+              "value": "black"
+          }        
+      },
+      "fillOpacity": {
+          "condition": {"param": "select", "value": 1},
+          "value": 0.3
+      },
+      "strokeWidth": {
+          "condition": [
+              {
+                  "param": "select",
+                  "empty": false,
+                  "value": 2
+              },
+              {
+                  "param": "highlight",
+                  "empty": false,
+                  "value": 1
+              }
+          ],
+          "value": 0
+      }
+      },
+      "config": {
+          "view": {"stroke": null}
+      }
   }
   
