@@ -89,8 +89,10 @@
       "layer": [
       {
         "mark": {
-          "type": "circle",
-          "color": "#A0522D"
+          "type": "image",
+          "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/locationpin.png",
+          "height": 13,
+          "width": 13
         },
         "encoding": {
             "opacity": {
@@ -99,16 +101,13 @@
                     "value": 1
                 },
                 "value": 0
-            },
-            "size": {
-              "value": 40
             }
         }
       }, {
         "mark": {
             "type": "text",
             "baseline": "middle",
-            "dy": -12,
+            "dy": -13,
             "fontSize": 19,
             "fontStyle": "italic",
             "fontWeight": "bold"
