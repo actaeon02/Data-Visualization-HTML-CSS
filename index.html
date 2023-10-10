@@ -165,6 +165,7 @@
     var line_vis = "./Visualisation/crime_trends.vg.json";
     var radial = "./Visualisation/radial.vg.json"
     var dot_plot = "./Visualisation/connected_dot_plot.vg.json"
+    var rank_chart = ".Visualisation/rank_chart.vg.json"
 
     vegaEmbed('#vis1', choropleth_vis, { "actions": false }).then(function (result) {
     }).catch(console.error);
@@ -175,7 +176,7 @@
     vegaEmbed('#vis3', interactive_scatter, { "actions": false }).then(function (result) {
     }).catch(console.error);
 
-    vegaEmbed('#vis4', radial, { "actions": false }).then(function (result) {
+    vegaEmbed('#vis4', rank_chart, { "actions": false }).then(function (result) {
     }).catch(console.error);
 
     vegaEmbed('#vis5', dot_plot, { "actions": false }).then(function (result) {
