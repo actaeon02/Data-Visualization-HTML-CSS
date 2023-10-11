@@ -36,21 +36,26 @@ hr {
 }
 
 .crime_text {
-    color: #a63603;
+    color: #bc5f5d;
     font-weight: bold;
 }
 
 .unemployment_text {
-    color: #2f5e84;
+    color: #5286a6;
     font-weight: bold;
 }
 
 .density_text {
-    color:rgb(54, 156, 54);
+    color: #fd8d3c;
     font-weight: bold;
 }
 .socio_text {
-    color: sandybrown;
+    color: #c7a555;
+    font-weight: bold;
+}
+
+.population_text {
+    color:rgb(40, 193, 93);
     font-weight: bold;
 }
 
@@ -70,7 +75,12 @@ hr {
 }
 
 .perlis {
-    color: #bcbd22;
+    color: #4f772d;
+    font-weight: bold;
+}
+
+.selangor {
+    color: #f5cb5c;
     font-weight: bold;
 }
 

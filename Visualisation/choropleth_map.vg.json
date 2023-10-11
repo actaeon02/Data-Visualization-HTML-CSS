@@ -3,11 +3,20 @@
   "width": "container",
   "height": 400,
   "background": "#FFF5EE",
-  "data": {
-    "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/malaysia-states.topojson",
-    "format": {"type": "topojson", "feature": "states"}
-  },
   "projection": {"type": "equirectangular"},
+  "params": [
+    {
+        "name": "year_filter",
+        "value": 1980,
+        "bind": {
+            "input": "range",
+            "min": 1980,
+            "max": 2016,
+            "step": 1,
+            "name": "Select Year "
+        }
+    }
+  ],
   "layer":[
     {
       "transform": [
@@ -21,35 +30,34 @@
       }
     },
     {
+      "data": {
+        "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/Dataset.csv"
+      },
       "transform": [
         {
-          "lookup": "properties.Name",
+          "lookup": "STATES",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/Normalized.csv"
+              "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/malaysia-states.topojson",
+              "format": {"type": "topojson", "feature": "states"}
             },
-            "key": "STATES",
-            "fields": ["POPULATION", "DENSITY", "TOTALCRIME", "UNEMPLOYMENT", "LAT", "LONG"]
-          }
+            "key": "properties.Name"
+          },
+          "as": "geo"
         },
         {
-          "calculate": "(datum.TOTALCRIME + 0.1) / datum.POPULATION * 10000", "as": "Crime Rate"},
-        {
-          "calculate": "format(datum['Crime Rate'], '.2f') + ' crimes per 10,000 people'",
-          "as": "Crime Rates"
-        },
-        {
-          "calculate": "format(datum.POPULATION, ',d') + ' People'", "as": "Population"
-        },
-        {
-          "calculate": "datum.DENSITY + ' (People / KM2)'", "as": "Density"
+          "calculate": "format(datum.DENSITY, '0.2f') + ' (People / KM2)'", "as": "Density"
         },
         {
           "calculate": "datum.UNEMPLOYMENT + '%'", "as": "Unemployment Rate"
+        },
+        {
+          "filter": "datum.YEAR == year_filter"
         }
       ],
       "mark": {"type": "geoshape", "stroke": "white"},
       "encoding": {
+        "shape": {"field": "geo" ,"type": "geojson"},
         "color": {
           "field": "DENSITY",
           "type": "quantitative",
@@ -65,10 +73,8 @@
       },
         "tooltip": [
           {"field": "properties.Name", "type": "nominal", "title": "States"},
-          {"field": "Population", "type": "nominal"},
-          {"field": "Density", "type":"nominal"},
-          {"field": "Crime Rates", "type":"nominal"},
-          {"field": "Unemployment Rate", "type":"nominal"}
+          {"field": "YEAR", "type": "nominal", "title": "Year"},
+          {"field": "Density", "type":"nominal", "title": "Population Density"}
         ]
       }
     },

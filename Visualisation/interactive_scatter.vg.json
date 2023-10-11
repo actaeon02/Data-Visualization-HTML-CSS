@@ -31,13 +31,10 @@
             "as": "Crime Rates"
         },
         {
-            "calculate": "format(datum.POPULATION, ',d') + ' People'", "as": "Population"
-        },
-        {
-            "calculate": "format(datum.DENSITY, '.2f') + ' (People / KM2)'", "as": "Density"
-        },
-        {
             "calculate": "datum.UNEMPLOYMENT + '%'", "as": "Unemployment Rate"
+        },
+        {
+            "calculate": "format(datum.DENSITY, '0.2f') + ' (People / KM2)'", "as": "Density"
         },
         {
           "filter": "datum.UNEMPLOYMENT < 10 & datum['Crime Rate'] > 1"
@@ -77,7 +74,7 @@
               },
               {
               "name": "state_highlight",
-              "select": {"type": "point", "fields": ["REGION"]},
+              "select": {"type": "point", "fields": ["STATES"]},
               "bind": "legend"
               },
               {
@@ -106,17 +103,13 @@
                     }
                 },
                 "color": {
-                    "field": "REGION",
+                    "field": "STATES",
                     "type": "nominal",
                     "scale": {
-                        "domain": [
-                            "West Malaysia",
-                            "East Malaysia"
-                        ],
-                        "range": [
-                            "#e6550d",
-                            "#4682B4"
-                        ]
+                        "domain": ["Johor", "Kedah", "Kelantan", "Melaka", "Negeri Sembilan", "Pahang", "Penang", "Perak", "Perlis", "Sabah", "Sarawak", "Selangor", "Terengganu"],
+                        "range": ["#924900", "#7bdff2", "#ff5d8f","#0b132b","#6A51A3",
+                        "#bc6c25","#bc4749","#C7E9B4","#4f772d","#036666",
+                        "#1982c4","#f5cb5c","#db6d00"]
 
                     }
                 },
@@ -139,8 +132,7 @@
                 },
                 "tooltip": [
                     {"field": "STATES", "type": "nominal", "title": "State"},
-                    {"field": "Population", "type": "nominal"},
-                    {"field": "Density", "type":"nominal"},
+                    {"field": "Density", "type": "nominal"},
                     {"field": "Crime Rates", "type":"nominal"},
                     {"field": "Unemployment Rate", "type":"nominal"}
                 ]
@@ -165,7 +157,7 @@
                 },
                 "opacity": {
                     "condition": {
-                        "test": "(datum.STATES == 'Selangor' || datum.STATES == 'Penang' || datum.STATES == 'Sabah' || datum.STATES == 'Sarawak') & datum.UNEMPLOYMENT < 10 & datum['Crime Rate'] > 1",
+                        "test": "(datum.STATES == 'Selangor' || datum.STATES == 'Penang' || datum.STATES == 'Sabah' || datum.STATES == 'Sarawak' || datum.STATES == 'Melaka') & datum.UNEMPLOYMENT < 10 & datum['Crime Rate'] > 1",
                         "value": 1
                     },
                     "value": 0
