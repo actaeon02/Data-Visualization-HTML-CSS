@@ -19,6 +19,10 @@
   ],
   "layer":[
     {
+      "data": {
+        "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/malaysia-states.topojson",
+        "format": {"type": "topojson", "feature": "states"}
+      },
       "transform": [
         {"calculate": "'Data is not available in ' + datum.properties.Name", "as": "note"}
       ],
@@ -72,7 +76,7 @@
         }
       },
         "tooltip": [
-          {"field": "properties.Name", "type": "nominal", "title": "States"},
+          {"field": "STATES", "type": "nominal", "title": "States"},
           {"field": "YEAR", "type": "nominal", "title": "Year"},
           {"field": "Density", "type":"nominal", "title": "Population Density"}
         ]

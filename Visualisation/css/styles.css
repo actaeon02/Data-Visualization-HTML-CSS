@@ -18,7 +18,7 @@ h2 {
 }
 
 p {
-    font-size: 17px;
+    font-size: 18px;
     text-align: justify;
     padding-left: 30px;
     padding-right: 30px;
@@ -84,6 +84,16 @@ hr {
     font-weight: bold;
 }
 
+.penang {
+    color: #bc4749;
+    font-weight: bold;
+}
+
+.sarawak {
+    color: #1982c4;
+    font-weight: bold;
+}
+
 body {
     background-color: white;
 }
@@ -115,7 +125,7 @@ body {
 }
 
 .small-font {
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .title {
