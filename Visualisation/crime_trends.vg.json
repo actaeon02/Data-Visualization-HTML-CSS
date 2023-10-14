@@ -106,7 +106,7 @@
                 ],
                 "opacity": {
                     "condition": {
-                        "test": "(datum.STATES == 'Selangor' || datum.STATES == 'Johor' || datum.STATES == 'Perlis') | state_filter != 'All'",
+                        "test": "(datum.STATES == 'Selangor' || datum.STATES == 'Johor' || datum.STATES == 'Perlis') || state_filter != 'All'",
                         "value": 1
                     },
                     "value": 0.1

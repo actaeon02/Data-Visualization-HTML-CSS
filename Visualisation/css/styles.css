@@ -64,6 +64,11 @@ hr {
     font-weight: bold;
 }
 
+.credit {
+    color: #ff9500;
+    font-weight: bold;
+}
+
 .empty_text {
     color: darkorchid;
     font-weight: bolder;
