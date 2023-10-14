@@ -48,7 +48,9 @@
                 "offset": 10,
                 "ticks": false,
                 "minExtent": 20,
-                "labelPadding": 10
+                "labelPadding": 10,
+                "titleFontSize": 13,
+                "titlePadding": 15
             },
             "scale": {
                 "domain": [0.5, 5.5]
@@ -64,7 +66,8 @@
                 "minExtent": 80,
                 "domain": true,
                 "labelPadding": 10,
-                "labelAngle": -45
+                "labelAngle": -45,
+                "titleFontSize": 13
             }
         }
     },

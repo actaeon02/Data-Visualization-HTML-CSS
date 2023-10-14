@@ -37,6 +37,14 @@
             "calculate": "format(datum.DENSITY, '0.2f') + ' (People / KM2)'", "as": "Density"
         },
         {
+            "calculate": "'Surprisingly\\, high population density in this region doesn\\'t have =high correlation with crime and unemployment rates.'",
+            "as": "multiline"
+        },
+        {
+            "calculate": "split(datum.multiline, '=')",
+            "as": "correlation"
+        },
+        {
           "filter": "datum.UNEMPLOYMENT < 10 & datum['Crime Rate'] > 1"
         }
     ],
@@ -49,7 +57,9 @@
                 "domain": [0.5, 10]
             },
             "axis": {
-              "tickCount": 4
+              "tickCount": 4,
+              "titleFontSize": 13,
+              "titlePadding": 15
             }
         },
         "y": {
@@ -60,7 +70,9 @@
                 "domain": [0, 1200]
             },
             "axis": {
-              "tickCount": 4
+              "tickCount": 4,
+              "titleFontSize": 13,
+              "titlePadding": 15
             }
         }
     },
@@ -110,7 +122,6 @@
                         "range": ["#924900", "#7bdff2", "#ff5d8f","#0b132b","#6A51A3",
                         "#bc6c25","#bc4749","#C7E9B4","#4f772d","#036666",
                         "#1982c4","#f5cb5c","#db6d00"]
-
                     }
                 },
                 "opacity": {
@@ -157,11 +168,30 @@
                 },
                 "opacity": {
                     "condition": {
-                        "test": "(datum.STATES == 'Selangor' || datum.STATES == 'Penang' || datum.STATES == 'Sabah' || datum.STATES == 'Sarawak' || datum.STATES == 'Melaka') & datum.UNEMPLOYMENT < 10 & datum['Crime Rate'] > 1",
+                        "test": "(datum.STATES == 'Selangor' || datum.STATES == 'Penang' || datum.STATES == 'Sabah' || datum.STATES == 'Sarawak' || datum.STATES == 'Melaka' || datum.STATES == 'Kelantan') & datum.UNEMPLOYMENT < 10 & datum['Crime Rate'] > 1",
                         "value": 1
                     },
                     "value": 0
                 }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "center",
+                "dx": 5,
+                "dy": 1,
+                "fontSize": 13,
+                "fontWeight": "normal",
+                "font": "Rubik",
+                "opacity": 0.2
+            },
+            "encoding": {
+                "text": {
+                "field": "correlation", "type": "nominal"
+                },
+                "x": {"value": 600},
+                "y": {"value": 40}
             }
         }
     ],

@@ -26,7 +26,7 @@
       "transform": [
         {"calculate": "'Data is not available in ' + datum.properties.Name", "as": "note"}
       ],
-      "mark": {"type": "geoshape", "fill": "palevioletred", "stroke": "white"},
+      "mark": {"type": "geoshape", "fill": "darkorchid", "stroke": "white"},
       "encoding": {
         "tooltip": {
           "field": "note"
@@ -96,47 +96,77 @@
           "type": "quantitative"
         }
       },
-      "layer": [
-      {
-        "mark": {
-          "type": "image",
-          "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/locationpin.png",
-          "height": 25,
-          "width": 22
+      "transform": [
+        {
+          "calculate": "'Sarawak and Sabah\\, located on the world\\'s =third-largest island\\, offer unique adventures on Borneo.'",
+          "as": "multiline"
         },
-        "encoding": {
-            "opacity": {
-                "condition": {
-                    "test": "datum.STATES == 'Sarawak' || datum.STATES == 'Sabah' || datum.STATES == 'Johor' || datum.STATES == 'Pahang'",
-                    "value": 1
-                },
-                "value": 0
-            }
+        {
+          "calculate": "split(datum.multiline, '=')",
+          "as": "borneo"
         }
-      }, {
-        "mark": {
-            "type": "text",
-            "baseline": "middle",
-            "dy": -20,
-            "fontSize": 20,
-            "fontStyle": "italic",
-            "fontWeight": "bold"
-        },
-        "encoding": {
-          "text": {"field": "STATES", "type": "nominal"},
-          "color": {"value": "#4A0404"},
-          "opacity": {
-            "condition": {
-                "test": "datum.STATES == 'Sarawak' || datum.STATES == 'Sabah' || datum.STATES == 'Johor' || datum.STATES == 'Pahang'",
-                "value": 1
-            },
-            "value": 0
+      ],
+      "layer": [
+        {
+          "mark": {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/locationpin.png",
+            "height": 25,
+            "width": 22
           },
-          "size": {
-            "value": 13
+          "encoding": {
+              "opacity": {
+                  "condition": {
+                      "test": "datum.STATES == 'Sarawak' || datum.STATES == 'Sabah' || datum.STATES == 'Johor' || datum.STATES == 'Pahang'",
+                      "value": 1
+                  },
+                  "value": 0
+              }
+          }
+        }, 
+        {
+          "mark": {
+              "type": "text",
+              "baseline": "middle",
+              "dy": -20,
+              "fontSize": 20,
+              "fontStyle": "italic",
+              "fontWeight": "bold"
+          },
+          "encoding": {
+            "text": {"field": "STATES", "type": "nominal"},
+            "color": {"value": "#4A0404"},
+            "opacity": {
+              "condition": {
+                  "test": "datum.STATES == 'Sarawak' || datum.STATES == 'Sabah' || datum.STATES == 'Johor' || datum.STATES == 'Pahang'",
+                  "value": 1
+              },
+              "value": 0
+            },
+            "size": {
+              "value": 13
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "dx": 5,
+            "dy": 1,
+            "fontSize": 13,
+            "fontWeight": "normal",
+            "font": "Rubik",
+            "opacity": 0.2
+          },
+          "encoding": {
+            "text": {
+              "field": "borneo", "type": "nominal"
+            },
+            "x": {"value": 500},
+            "y": {"value": 70}
           }
         }
-      }
       ]
     }
   ],

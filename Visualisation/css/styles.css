@@ -36,7 +36,7 @@ hr {
 }
 
 .crime_text {
-    color: #bc5f5d;
+    color: #ce5428;
     font-weight: bold;
 }
 
@@ -64,8 +64,8 @@ hr {
     font-weight: bold;
 }
 
-.pink_text {
-    color: palevioletred;
+.empty_text {
+    color: darkorchid;
     font-weight: bolder;
 }
 
@@ -85,12 +85,22 @@ hr {
 }
 
 .penang {
-    color: #bc4749;
+    color: #9e2c2e;
     font-weight: bold;
 }
 
 .sarawak {
     color: #1982c4;
+    font-weight: bold;
+}
+
+.sabah {
+    color: #036666;
+    font-weight: bold;
+}
+
+.melaka {
+    color: #0b132b;
     font-weight: bold;
 }
 

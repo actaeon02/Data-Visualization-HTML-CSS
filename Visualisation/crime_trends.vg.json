@@ -29,18 +29,34 @@
         {
           "calculate": "format(datum.TOTAL_CRIME, ',d') + ' crimes'",
           "as": "Total Crime"
+        },
+        {
+            "calculate": "'Selangor consistently tops the charts =in crime rates, earning it the title of the =\\'Challenge Champion\\' over the years.'",
+            "as": "multiline"
+        },
+        {
+            "calculate": "split(datum.multiline, '=')",
+            "as": "trend"
         }
     ],
     "encoding": {
         "x": {
             "field": "YEAR",
             "type": "temporal",
-            "title": "Year"
+            "title": "Year",
+            "axis": {
+                "titleFontSize": 13,
+                "titlePadding": 15
+            }
         },
         "y": {
             "field": "TOTAL_CRIME",
             "type": "quantitative",
-            "title": "Total Crime"
+            "title": "Total Crime",
+            "axis": {
+                "titleFontSize": 13,
+                "titlePadding": 15
+            }
         },
         "color": {
             "field": "STATES",
@@ -59,10 +75,10 @@
         },
         "opacity": {
             "condition": {
-                "param": "hover",
+                "test": "(datum.STATES == 'Selangor' || datum.STATES == 'Johor' || datum.STATES == 'Perlis') | state_filter != 'All'",
                 "value": 1
             },
-            "value": 0.1
+            "value": 0.2
         }
     },
     "layer": [
@@ -79,7 +95,7 @@
             ],
             "mark": {
                 "type": "circle", 
-                "size": 20
+                "size": 30
             },
             "encoding": {
                 "tooltip": [
@@ -87,7 +103,14 @@
                     {"field": "YEAR", "type": "temporal", "title": "Date"},
                     {"field": "Total Crime"},
                     {"field": "Crime Rates", "title": "Crime Rate"}
-                ]
+                ],
+                "opacity": {
+                    "condition": {
+                        "test": "(datum.STATES == 'Selangor' || datum.STATES == 'Johor' || datum.STATES == 'Perlis') | state_filter != 'All'",
+                        "value": 1
+                    },
+                    "value": 0.1
+                }
             }
         },
         {
@@ -102,7 +125,31 @@
                     }
                 }
             }
-        }
+        },
+        {
+            "mark": {
+              "type": "text",
+              "align": "center",
+              "dx": 5,
+              "dy": 1,
+              "fontSize": 13,
+              "fontWeight": "normal",
+              "font": "Rubik"
+            },
+            "encoding": {
+              "text": {
+                "field": "trend"
+              },
+              "x": {"value": 117},
+              "y": {"value": 15},
+              "color": {
+                "value": "black"
+              },
+              "opacity": {
+                "value": 0.023
+              }
+            }
+          }
     ],
     "config": {
         "view": {
