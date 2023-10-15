@@ -161,14 +161,14 @@ body {
     border-width: 2px;
 }
 
-.banner {
+.credit_banner{
     background-image: url('https://raw.githubusercontent.com/actaeon02/FIT3179/main/Visualisation/Credit.png');
     background-size: cover; /* Adjust as needed */
     background-repeat: no-repeat;
     background-position: center;
-    color: white;
     padding-top: 20px;
     padding-bottom: 20px;
+    color: white;
     border-radius: 10px;
     border-color: black;
     border-style:solid;
