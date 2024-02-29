@@ -19,7 +19,7 @@ The website allows users to navigate through different datasets related to unemp
 
 ## Getting Started
 
-To explore the dataset and access the interactive features, simply open the index.html file in your web browser. No additional installation or setup is required.
+To explore the dataset and access the interactive features, simply open the index.html file in your web browser or click this [LINK](https://actaeon02.github.io/Data-Visualization-HTML-CSS/). No additional installation or setup is required.
 
 ## Contribution
 
